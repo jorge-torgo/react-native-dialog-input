@@ -73,18 +73,14 @@ class DialogInput extends PureComponent {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                ...Platform.select({
-                    android: {
-                        backgroundColor: 'rgba(0,0,0,0.62)'
-                    }
-                }),
+                backgroundColor: 'rgba(0,0,0,0.62)',
             },
             modal_container: {
                 marginLeft: 30,
                 marginRight: 30,
                 ...Platform.select({
                     ios: {
-                        backgroundColor: '#E3E6E7',
+                        backgroundColor: colors.background,
                         borderRadius: 10,
                         minWidth: 300,
                     },
@@ -92,7 +88,7 @@ class DialogInput extends PureComponent {
                         backgroundColor: colors.background,
                         elevation: 24,
                         minWidth: 280,
-                        borderRadius: 5,
+                        borderRadius: 10,
                     },
                 }),
             },
@@ -114,6 +110,7 @@ class DialogInput extends PureComponent {
                         marginTop: 10,
                         textAlign: 'center',
                         marginBottom: 5,
+                        color: colors.text,
                     },
                     android: {
                         textAlign: 'left',
@@ -127,6 +124,7 @@ class DialogInput extends PureComponent {
                     ios: {
                         textAlign: 'center',
                         marginBottom: 10,
+                        color: colors.text,
                     },
                     android: {
                         textAlign: 'left',
@@ -138,26 +136,15 @@ class DialogInput extends PureComponent {
             input_container: {
                 textAlign: 'left',
                 fontSize: 16,
-                color: 'rgba(0,0,0,0.54)',
-                ...Platform.select({
-                    ios: {
-                        backgroundColor: 'white',
-                        borderRadius: 5,
-                        paddingTop: 5,
-                        borderWidth: 1,
-                        borderColor: '#B0B0B0',
-                        paddingBottom: 5,
-                        paddingLeft: 10,
-                        marginBottom: 15,
-                        marginTop: 10,
-                    },
-                    android: {
-                        marginTop: 8,
-                        borderBottomWidth: 2,
-                        borderColor: colors.primary,
-                        color: colors.text,
-                    },
-                }),
+                borderRadius: 5,
+                paddingTop: 2,
+                borderWidth: 1,
+                borderColor: '#B0B0B0',
+                paddingBottom: 2,
+                paddingLeft: 10,
+                marginBottom: 15,
+                marginTop: 10,
+                color: colors.text,
             },
             btn_container: {
                 flex: 1,
@@ -265,6 +252,7 @@ class DialogInput extends PureComponent {
                                            placeholderTextColor={placeholderTextColor}
                                            onChangeText={this.handleOnChangeText}
                                            value={value}
+                                           cursorColor={colors.primary}
                                 />
                             </View>
                             <View style={styles.btn_container}>
