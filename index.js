@@ -59,6 +59,7 @@ class DialogInput extends PureComponent {
         const dialogStyleProps = this.props.dialogStyle || {};
         const placeholderTextColor = this.props.placeholderTextColor
         const animationType = this.props.animationType || 'fade';
+        const enterSubmits = this.props.enterSubmits || false;
         let cancelText = this.props.cancelText || 'Cancel';
         let submitText = this.props.submitText || 'Submit';
         cancelText = (Platform.OS === 'ios') ? cancelText : cancelText.toUpperCase();
@@ -253,6 +254,7 @@ class DialogInput extends PureComponent {
                                            onChangeText={this.handleOnChangeText}
                                            value={value}
                                            cursorColor={colors.primary}
+                                           onSubmitEditing={enterSubmits ? this.handleSubmit : undefined}
                                 />
                             </View>
                             <View style={styles.btn_container}>
